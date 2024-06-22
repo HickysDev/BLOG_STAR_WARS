@@ -1,4 +1,4 @@
-*{
+* {
     font-family: "Montserrat";
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
     background-color: #FAFAFA;
 }
 
-html{
+html {
     min-height: 100vh;
     position: relative;
 }
@@ -103,7 +103,7 @@ footer {
 
 .post-box .post-title {
     font-size: 24px;
-    margin: 10px 0 ;
+    margin: 10px 0;
 }
 
 .post-box .post-title a {
@@ -130,7 +130,85 @@ footer {
     margin-right: 5px;
 }
 
-@media(max-width: 1000px){
+/* POST */
+
+#post-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "main" "sidebar";
+    grid-gap: 10px;
+    padding-top: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+}
+
+.content-container {
+    grid-area: main;
+}
+
+#main-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+#post-description {
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.post-content {
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.img-container img {
+    margin-bottom: 30px;
+    width: 60%;
+}
+
+/* POST ASIDE */
+
+.nav-container {
+    grid-area: sidebar;
+}
+
+#tags-title,
+#categories-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    font-weight: 300;
+}
+
+#tags-list,
+#categories-list {
+    list-style: none;
+}
+
+#tags-list li,
+#categories-list li {
+    margin-bottom: 10px;
+}
+
+#tags-list a,
+#categories-list a {
+    color: #666;
+    transition: .5s;
+}
+
+#tags-list a:hover,
+#categories-list a:hover {
+    color: #000;
+}
+
+@media(max-width: 1000px) {
+
+    /* HOME */
     #title-container {
         min-width: 300px;
         text-align: center;
@@ -143,10 +221,24 @@ footer {
 
     #posts-container {
         margin: 0 20px;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     #logo {
         display: none;
     }
+
+    /* POST */
+
+    #posts-container {
+       grid-template-columns: 100%;
+       padding: 15px;
+       grid-template-areas: "main" "sidebar";
+    }
+
+    .img-container img {
+        width: 100%;
+    }
+    
+
 }
